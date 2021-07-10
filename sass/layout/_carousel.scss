@@ -4,7 +4,7 @@
   position: relative;
   .carousel__top {
     position: absolute;
-    top: -260px;
+    top: 0;
     left: 0;
     z-index: -1;
   }
@@ -51,7 +51,47 @@
   }
   .carousel__bottom {
     position: absolute;
-    left: -100px;
-    top: 395px;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@include responsive("extra-large") {
+  .carousel {
+    .carousel__content {
+      width: 100% !important;
+    }
+  }
+}
+
+@include responsive("large") {
+  .carousel {
+    .carousel__content {
+      width: 100% !important;
+      flex-wrap: wrap;
+      .carousel__items {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@include responsive("medium") {
+  .carousel {
+    .carousel__content {
+      .carousel__items {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@include responsive("small") {
+  .carousel {
+    .carousel__content {
+      .carousel__items {
+        width: 100%;
+      }
+    }
   }
 }

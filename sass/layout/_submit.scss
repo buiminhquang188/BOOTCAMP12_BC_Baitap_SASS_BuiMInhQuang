@@ -94,7 +94,32 @@
   }
   .submit__wavebottom {
     position: absolute;
-    left: 0;
-    top: 34%;
+    left: -20px;
+    bottom: 0;
   }
+}
+
+@include responsive("extra-large") {
+  .submit {
+    .submit__content {
+      width: 100% !important;
+      display: flex !important;
+    }
+  }
+}
+
+@include responsive("large") {
+  .submit {
+    .submit__content {
+      display: flex !important;
+      flex-direction: column;
+      flex-wrap: wrap !important;
+    }
+  }
+}
+
+@include responsive("medium") {
+}
+
+@include responsive("small") {
 }

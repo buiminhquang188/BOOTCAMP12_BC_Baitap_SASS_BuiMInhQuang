@@ -89,3 +89,20 @@ footer {
     }
   }
 }
+
+@include responsive("extra-large") {
+  footer {
+    .footer__content {
+      width: 100% !important;
+    }
+  }
+}
+
+@include responsive("large") {
+}
+
+@include responsive("medium") {
+}
+
+@include responsive("small") {
+}

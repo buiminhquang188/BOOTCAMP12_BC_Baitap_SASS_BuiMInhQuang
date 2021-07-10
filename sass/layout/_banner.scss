@@ -1,4 +1,5 @@
 .banner {
+  position: relative;
   .banner__top {
     position: absolute;
     top: 0%;
@@ -26,4 +27,28 @@
       }
     }
   }
+  .banner__bottom{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
+@include responsive("extra-large") {
+  .banner {
+    width: 100% !important;
+    .banner__items {
+      flex-direction: column !important;
+    }
+  }
+}
+
+@include responsive("large") {
+}
+
+@include responsive("medium") {
+}
+
+@include responsive("small") {
 }

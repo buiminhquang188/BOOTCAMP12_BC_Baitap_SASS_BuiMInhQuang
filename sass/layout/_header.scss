@@ -7,65 +7,55 @@ header {
   background: transparent;
   z-index: 9999;
   position: fixed;
-  nav {
-    margin: 0 auto;
+  .header__container {
+    a {
+      color: $color-black;
+      transition: all ease 350ms;
+    }
+    a:hover {
+      color: $color-purple;
+    }
     .header__navbar {
+      width: 50%;
       padding-left: $pd-1;
-      @include styleText($fs-6, $fw-2, $color-black);
-      li {
-        line-height: 80px;
-        padding-right: $pd-1;
-        a {
-          padding: 0;
-          margin: 0;
-        }
-      }
-      .navbar-light .navbar-nav .nav-link {
-        color: $color-black;
-      }
-      .navbar-nav {
+      ul li {
+        padding: 0 8px;
+        @include styleText($fs-6, $fw-2, $color-black);
         position: relative;
+        a:hover::after {
+          content: "\2022";
+          font-size: 30px;
+          transition: font-size ease 350ms;
+        }
         .active::after {
           content: "\2022";
-          font-size: $fs-5;
-          position: absolute;
-          top: 30px;
-          left: 130px;
+          font-size: 15px;
+          transition: font-size ease 350ms;
+        }
+        a:after {
+          content: "";
           color: $color-purple;
+          position: absolute;
+          bottom: -70%;
+          right: 45%;
+          font-size: 15px;
         }
-      }
-    }
-  }
-  .header__infor {
-    .header__phonenumber {
-      a {
-        @include styleButton($color-purple, $pd-2, $pd-3, $br-1);
-        @include styleText($fs-6, $fw-1, $color-button);
-        margin: 6px;
-        border: 1px solid $color-purple;
-        transition: all ease 300ms;
-        i {
-          padding-right: 5px;
-        }
-      }
-      a:hover {
-        text-decoration: none;
-        color: $color-purple;
-        box-shadow: inset 0 0 0 2em $color-button;
-        outline: none;
       }
     }
     .header__social {
-      li {
-        cursor: pointer;
-        list-style: none;
-        display: inline;
-        padding-left: 5px;
-        i {
-          @include styleText($fs-6, $fw-1, $color-black);
-          transition: all ease 300ms;
+      .header__tel {
+        margin-right: 20px;
+        a {
+          @include styleButton($color-purple, 5px, 15px, $br-1);
+          color: $color-button;
+          border: 1px solid $color-purple;
+          transition: all ease 350ms;
+          i {
+            padding-right: 5px;
+          }
         }
-        i:hover {
+        a:hover {
+          box-shadow: 0 0 0 2em inset $color-white;
           color: $color-purple;
         }
       }
@@ -73,28 +63,18 @@ header {
   }
 }
 .shrink {
-  height: 50px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  .header__logo {
-    visibility: hidden;
-  }
-  nav {
-    .header__navbar {
-      li {
-        line-height: 0;
-        padding-bottom: 40px;
-      }
+  height: $pd-5;
+  background-color: $color-white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  .header__container {
+    img {
+      visibility: hidden;
     }
-  }
-  .header__phonenumber {
-    padding-bottom: 40px;
-    a {
-      padding: 10px 20px !important;
+    .header__navbar,
+    .header__social {
+      padding-bottom: $pd-5;
     }
-  }
-  background: $color-white;
-  .header__infor {
-    padding-right: 50px;
   }
 }
 
@@ -106,25 +86,9 @@ header {
     position: relative;
     display: block;
     background-color: $color-white;
-    .header__grid {
-      .header__logo {
-        img {
-          height: 48px;
-          width: 48px;
-          position: absolute;
-          top: -5px;
-          left: -100px;
-        }
-      }
-      .header__navbar {
-        button {
-          position: absolute;
-          top: -30px;
-          left: -420px;
-          outline: none;
-          border: 0px;
-        }
-      }
+    button{
+      outline: none;
     }
   }
 }
+
